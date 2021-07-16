@@ -27,7 +27,8 @@ namespace KentuckyWindageForms.Services
             {
                 MoaElevation = drop,
                 MoaWindage = adj,
-                MoaDirection = dir
+                MoaDirection = dir,
+                MoaDistance = dist
             };
         }
 
