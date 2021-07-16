@@ -10,23 +10,26 @@
             <Label Text="Kentucky Windage Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label Text="Size of Target in inches:" FontSize="Title" />
-        <Entry></Entry>
+        <Entry Text="{Binding TargetSizeInches}"></Entry>
         <Label Text="Size of Target in mildots:" FontSize="Title" />
-        <Entry></Entry>
-        <Label Text="Minutes of angle windage:" FontSize="Title" />
-        <Entry></Entry>
-        <Label Text="Wind Direction:" FontSize="Title" />
-        <Entry></Entry>
-
+        <Entry Text="{Binding TargetSizeMilDots}"></Entry>
+        <Label Text="Windage in inches:" FontSize="Title" />
+        <Entry Text="{Binding   WindageInches}"></Entry>
+        <Label Text="Elevation in inches:" FontSize="Title" />
+        <Entry Text="{Binding ElevationInches }"></Entry>
         <Label Text="Wind Direction:" FontSize="Title" />
         <Switch  IsToggled="True"></Switch>
+
+        <Label Text="Wind Direction:" FontSize="Title" />
+        <Switch  IsToggled="{Binding IsLeft}"></Switch>
         <Button Text="Calculate" Clicked="Button_OnClicked"  ></Button>
 
         <Label Text="MOA Windage Adjustment:" FontSize="Title" />
+        <Label Text="{Binding MoaWindage}" FontSize="Title" />
         <Label Text="MOA Windage Elevation:" FontSize="Title" />
-        <Switch  IsToggled="True"></Switch>
+        <Label Text="{Binding MoaElevation}" FontSize="Title" />
         <Label Text="Wind Direction:" FontSize="Title" />
-        <Switch  IsToggled="True"></Switch>
+       
 
     </StackLayout>
 
