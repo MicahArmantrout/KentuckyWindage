@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
+using System.Windows.Input;
+using KentuckyWindageForms.Extensions;
 using KentuckyWindageForms.Models;
 using KentuckyWindageForms.Services;
 using Xamarin.Forms;
@@ -14,10 +18,29 @@ namespace KentuckyWindageForms.ViewModels
 
         public MainPageViewModel()
         {
-            Commands.Add("Calculate", new Command(Calculate));
+            Commands.Add(nameof(Calculate), new Command(execute: DoCalc, canExecute: IsFormValid));
         }
 
-        public void Calculate()
+        public ICommand Calculate => Commands[nameof(Calculate)];
+        
+        private bool IsFormValid()
+        {
+            var isValid = _input.Validate(out var results);
+            if (!isValid)
+            {
+                var issues = results.Select(r => string.Join(", ", r.MemberNames) + ": " + r.ErrorMessage);
+                Errors = string.Join(Environment.NewLine, issues);
+            }
+            else
+            {
+                Errors = null;
+            }
+            OnPropertyChanged(nameof(Errors));
+
+            return isValid;
+        }
+
+        private void DoCalc()
         {
             // Declarations
             var calcService = new WindageCalculator(_input);
@@ -29,7 +52,9 @@ namespace KentuckyWindageForms.ViewModels
             OnPropertyChanged(nameof(MoaElevation));
             OnPropertyChanged(nameof(MoaWindage));
         }
-        
+
+
+        public string Errors { get; set; }
         public bool IsLeft
         {
             get => _input.WindDirection == WindDirection.Left;
