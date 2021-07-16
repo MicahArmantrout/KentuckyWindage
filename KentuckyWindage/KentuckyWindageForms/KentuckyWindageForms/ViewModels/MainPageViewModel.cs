@@ -2,22 +2,34 @@
 using System.Collections.Generic;
 using System.Text;
 using KentuckyWindageForms.Models;
+using KentuckyWindageForms.Services;
+using Xamarin.Forms;
 
 namespace KentuckyWindageForms.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        private readonly InputModel _input;
-        private readonly AdjustmentModel _adjustments;
+        private readonly InputModel _input = new InputModel();
+        private AdjustmentModel _adjustments = new AdjustmentModel();
 
         public MainPageViewModel()
         {
-            /*
-                MoaElevation = $"Elevation should be {elevation}",
-                MoaWindage = $"Windage should be {windage}"
-             */
+            Commands.Add("Calculate", new Command(Calculate));
         }
 
+        public void Calculate()
+        {
+            // Declarations
+            var calcService = new WindageCalculator(_input);
+
+            // Perform Calculation
+            _adjustments = calcService.Calculate();
+
+            // Fire updates
+            OnPropertyChanged(nameof(MoaElevation));
+            OnPropertyChanged(nameof(MoaWindage));
+        }
+        
         public bool IsLeft
         {
             get => _input.WindDirection == WindDirection.Left;
@@ -64,5 +76,9 @@ namespace KentuckyWindageForms.ViewModels
             }
         }
 
+        // Results
+        public string MoaElevation => $"Elevation should be {_adjustments.MoaElevation}";
+
+        public string MoaWindage => $"Windage should be {_adjustments.MoaWindage}";
     }
 }
