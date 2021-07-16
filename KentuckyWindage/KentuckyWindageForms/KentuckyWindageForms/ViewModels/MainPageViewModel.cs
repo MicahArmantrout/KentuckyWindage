@@ -92,5 +92,6 @@ namespace KentuckyWindageForms.ViewModels
         public string MoaElevation => _adjustments.MoaElevation > 0 ? $"Elevation should be {_adjustments.MoaElevation}" : "";
 
         public string MoaWindage => _adjustments.MoaElevation > 0 ? $"Windage should be {_adjustments.MoaWindage}" : "";
+        public string MoaWindDirection => _adjustments.MoaElevation > 0 ? $"Wind Direction {_adjustments.MoaDirection}" : "";
     }
 }

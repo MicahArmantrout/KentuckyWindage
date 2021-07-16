@@ -7,86 +7,94 @@
 
     <ScrollView>
         <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Kentucky Windage Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Kentucky Windage Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            
-            <!--TargetSizeInches-->
-            <Label Text="Size of Target in inches:"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-            <Entry Grid.Row="0"
-                   Grid.Column="1"
-                   Text="{Binding TargetSizeInches}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
 
-
-            <!--TargetSizeMilDots-->
-            <Label Grid.Row="1" Grid.Column="0" Text="Size of Target in mildots:"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-            <Entry Grid.Row="1"
-                   Grid.Column="1"
-                   Text="{Binding TargetSizeMilDots}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-
-            
-
-            <!--WindageInches-->
-            <Label Grid.Row="2" Grid.Column="0" Text="Windage Direction:"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-            <Entry Grid.Row="2"
-                   Grid.Column="1"
-                   Text="{Binding WindDirection}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-
-            <!--ElevationInches-->
-            <Label Grid.Row="3" Grid.Column="0" Text="Wind speed in MPH:"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-            <Entry Grid.Row="3"
-                   Grid.Column="1"
-                   Text="{Binding WindSpeedMph}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-            
-
-            <Button   Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Text="Calculate" Command="{Binding Calculate}"></Button>
+                <!--TargetSizeInches-->
+                <Label Text="Size of Target in inches:"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center" />
+                <Entry Grid.Row="0"
+                    Grid.Column="1"
+                    WidthRequest="120"
+                    Text="{Binding TargetSizeInches}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="FillAndExpand" />
 
 
-            <Label Grid.Row="6"  Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                <!--TargetSizeMilDots-->
+                <Label Grid.Row="1" Grid.Column="0" Text="Size of Target in mildots:"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center" />
+                <Entry Grid.Row="1"
+                    Grid.Column="1"
+                    WidthRequest="120"
+                    Text="{Binding TargetSizeMilDots}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="FillAndExpand" />
+
+
+
+                <!--WindageInches-->
+                <Label Grid.Row="2" Grid.Column="0" Text="Windage Direction (Clock):"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center" />
+                <Entry Grid.Row="2"
+                    Grid.Column="1"
+                    WidthRequest="120"
+                    Text="{Binding WindDirection}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="FillAndExpand" />
+
+                <!--ElevationInches-->
+                <Label Grid.Row="3" Grid.Column="0" Text="Wind speed in MPH:"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center" />
+                <Entry Grid.Row="3"
+                    Grid.Column="1"
+                    WidthRequest="120"
+                    Text="{Binding WindSpeedMph}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="FillAndExpand" />
+
+
+                <Button Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Text="Calculate" Command="{Binding Calculate}"></Button>
+
+
+                <Label Grid.Row="6"  Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
                    VerticalOptions="Center" Text="{Binding MoaWindage}" FontSize="Title" />
 
-            <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
                    VerticalOptions="Center" Text="{Binding MoaElevation}" FontSize="Title" />
 
 
-            <Label Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                <Label Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                   VerticalOptions="Center" Text="{Binding MoaWindDirection}" FontSize="Title" />
+
+                <Label Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
                    VerticalOptions="Center" Text="{Binding Errors}" FontSize="Title" />
 
 
-        </Grid><!--<Label Text="Size of Target in inches:"   FontSize="Title" />
+            </Grid>
+            <!--<Label Text="Size of Target in inches:"   FontSize="Title" />
         <Entry Text="{Binding TargetSizeInches}" WidthRequest="10"></Entry>
         <Label Text="Size of Target in mildots:" FontSize="Title" />
         <Entry Text="{Binding TargetSizeMilDots}"></Entry>
@@ -102,6 +110,6 @@
         <Label Text="MOA Windage Elevation:" FontSize="Title" />
         <Label Text="{Binding MoaElevation}" FontSize="Title" />
         <Label Text="Wind Direction:" FontSize="Title" />-->
-    </StackLayout>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
