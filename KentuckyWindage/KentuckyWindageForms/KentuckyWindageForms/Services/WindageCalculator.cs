@@ -7,27 +7,27 @@ namespace KentuckyWindageForms.Services
 {
     public class WindageCalculator
     {
-        private readonly InputViewModel input;
+        private readonly InputModel input;
 
-        public WindageCalculator(InputViewModel variables)
+        public WindageCalculator(InputModel variables)
         {
             input = variables;
         }
 
-        public void Calculate()
+        public AdjustmentModel Calculate()
         {
             // Declarations
-            var elevation = 0.0d; 
-            var windage = 0.0d;
+            var elevation = 0.0m; 
+            var windage = 0.0m;
 
             // Calculations
 
 
             // Output results
-            input.Adjustments = new Adjustments()
+            return new AdjustmentModel()
             {
-                MoaElevation = $"Elevation should be {elevation}",
-                MoaWindage = $"Windage should be {windage}"
+                MoaElevation = elevation,
+                MoaWindage = windage
             };
         }
     }

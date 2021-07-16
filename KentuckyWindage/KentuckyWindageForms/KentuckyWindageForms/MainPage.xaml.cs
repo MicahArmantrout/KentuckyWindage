@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KentuckyWindageForms.Models;
+using KentuckyWindageForms.ViewModels;
 using Xamarin.Forms;
 
 namespace KentuckyWindageForms
@@ -14,7 +14,7 @@ namespace KentuckyWindageForms
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new InputViewModel();
+            BindingContext = new MainPageViewModel();
         }
     }
 }
