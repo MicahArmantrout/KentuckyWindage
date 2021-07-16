@@ -16,10 +16,5 @@ namespace KentuckyWindageForms
             InitializeComponent();
             BindingContext = new MainPageViewModel();
         }
-
-        private void Button_OnClicked(object sender, EventArgs e)
-        {
-         
-        }
     }
 }
