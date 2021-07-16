@@ -5,7 +5,8 @@
              x:Class="KentuckyWindageForms.MainPage"
              x:DataType="viewModels:MainPageViewModel">
 
-    <StackLayout>
+    <ScrollView>
+        <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Kentucky Windage Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
@@ -51,34 +52,25 @@
             
 
             <!--WindageInches-->
-            <Label Grid.Row="2" Grid.Column="0" Text="Windage in inches:"
+            <Label Grid.Row="2" Grid.Column="0" Text="Windage Direction:"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
             <Entry Grid.Row="2"
                    Grid.Column="1"
-                   Text="{Binding TargetSizeMilDots}"
+                   Text="{Binding WindDirection}"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
 
             <!--ElevationInches-->
-            <Label Grid.Row="3" Grid.Column="0" Text="Elevation in inches:"
+            <Label Grid.Row="3" Grid.Column="0" Text="Wind speed in MPH:"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
             <Entry Grid.Row="3"
                    Grid.Column="1"
-                   Text="{Binding ElevationInches}"
+                   Text="{Binding WindSpeedMph}"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />
-
-            <!--ElevationInches-->
-            <Label Grid.Row="4" Grid.Column="0" Text="Wind Direction:" FontSize="Title"   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-            <StackLayout Grid.Row="4" Grid.Column="1">
-                <Switch IsToggled="{Binding IsLeft}"   HorizontalOptions="Center"
-                        VerticalOptions="Center"></Switch>
-                <Label  HorizontalOptions="Center"  Text="Left"></Label>
-            </StackLayout>
-
+            
 
             <Button   Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Text="Calculate" Command="{Binding Calculate}"></Button>
 
@@ -111,5 +103,5 @@
         <Label Text="{Binding MoaElevation}" FontSize="Title" />
         <Label Text="Wind Direction:" FontSize="Title" />-->
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>

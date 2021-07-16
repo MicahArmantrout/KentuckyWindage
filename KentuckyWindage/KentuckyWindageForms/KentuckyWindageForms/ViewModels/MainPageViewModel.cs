@@ -18,7 +18,7 @@ namespace KentuckyWindageForms.ViewModels
 
         public MainPageViewModel()
         {
-            Commands.Add(nameof(Calculate), new Command(execute: DoCalc, canExecute: IsFormValid));
+            Commands.Add(nameof(Calculate), new Command(execute: DoCalc));//, canExecute: IsFormValid));
         }
 
         public ICommand Calculate => Commands[nameof(Calculate)];
@@ -35,6 +35,8 @@ namespace KentuckyWindageForms.ViewModels
 
         private void DoCalc()
         {
+            if (!IsFormValid()) return;
+
             // Declarations
             var calcService = new WindageCalculator(_input);
 
@@ -48,17 +50,6 @@ namespace KentuckyWindageForms.ViewModels
 
 
         public string Errors { get; set; }
-        public bool IsRight
-        {
-            get => _input.WindDirection == WindDirection.Left;
-            set
-            {
-                _input.WindDirection = value ? WindDirection.Right : WindDirection.Left;
-                OnPropertyChanged(nameof(IsRight));
-                OnPropertyChanged(nameof(DirectionText));
-            }
-        }
-        public string DirectionText => _input.WindDirection.ToString();
 
         public decimal TargetSizeInches
         {
@@ -78,22 +69,22 @@ namespace KentuckyWindageForms.ViewModels
                 OnPropertyChanged(nameof(TargetSizeMilDots));
             }
         }
-        public decimal WindageInches
+        public int WindDirection
         {
-            get => _input.WindageInches;
+            get => _input.WindDirection;
             set
             {
-                _input.ElevationInches = value;
-                OnPropertyChanged(nameof(WindageInches));
+                _input.WindDirection = value;
+                OnPropertyChanged(nameof(WindDirection));
             }
         }
-        public decimal ElevationInches
+        public int WindSpeedMph
         {
-            get => _input.ElevationInches;
+            get => _input.WindSpeedMph;
             set
             {
-                _input.ElevationInches = value;
-                OnPropertyChanged(nameof(ElevationInches));
+                _input.WindSpeedMph = value;
+                OnPropertyChanged(nameof(WindSpeedMph));
             }
         }
 

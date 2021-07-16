@@ -21,7 +21,8 @@ namespace KentuckyWindageForms.Services
             var windage = 0.0m;
 
             // Calculations
-
+            elevation = input.WindSpeedMph + input.WindDirection;
+            windage = input.TargetSizeInches + input.TargetSizeMilDots;
 
             // Output results
             return new AdjustmentModel()

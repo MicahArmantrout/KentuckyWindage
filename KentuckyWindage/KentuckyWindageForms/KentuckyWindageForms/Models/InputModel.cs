@@ -12,11 +12,9 @@ namespace KentuckyWindageForms.Models
         public decimal TargetSizeInches { get; set; }
         [Positive]
         public decimal TargetSizeMilDots { get; set; }
+        [Positive(AllowZero = true)]
+        public int WindDirection { get; set; }
         [Positive]
-        public decimal WindageInches { get; set; }
-        [Positive]
-        public decimal ElevationInches { get; set; }
-        public WindDirection WindDirection { get; set; }
-
+        public int WindSpeedMph { get; set; }
     }
 }
