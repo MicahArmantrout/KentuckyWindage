@@ -9,18 +9,25 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Kentucky Windage Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Label Text="Size of Target in inches:" FontSize="Title" />
+        <Entry></Entry>
+        <Label Text="Size of Target in mildots:" FontSize="Title" />
+        <Entry></Entry>
+        <Label Text="Minutes of angle windage:" FontSize="Title" />
+        <Entry></Entry>
+        <Label Text="Wind Direction:" FontSize="Title" />
+        <Entry></Entry>
+
+        <Label Text="Wind Direction:" FontSize="Title" />
+        <Switch  IsToggled="True"></Switch>
+        <Button Text="Calculate" Clicked="Button_OnClicked"  ></Button>
+
+        <Label Text="MOA Windage Adjustment:" FontSize="Title" />
+        <Label Text="MOA Windage Elevation:" FontSize="Title" />
+        <Switch  IsToggled="True"></Switch>
+        <Label Text="Wind Direction:" FontSize="Title" />
+        <Switch  IsToggled="True"></Switch>
+
     </StackLayout>
 
 </ContentPage>
