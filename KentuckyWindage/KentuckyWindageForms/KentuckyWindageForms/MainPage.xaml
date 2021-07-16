@@ -16,7 +16,10 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
-
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -70,10 +73,28 @@
             <!--ElevationInches-->
             <Label Grid.Row="4" Grid.Column="0" Text="Wind Direction:" FontSize="Title"   HorizontalOptions="Center"
                    VerticalOptions="Center" />
-            <Switch Grid.Row="4" Grid.Column="1" IsToggled="{Binding IsLeft}"   HorizontalOptions="Center"
-                    VerticalOptions="Center"></Switch>
-        </Grid>
-        <!--<Label Text="Size of Target in inches:"   FontSize="Title" />
+            <StackLayout Grid.Row="4" Grid.Column="1">
+                <Switch IsToggled="{Binding IsLeft}"   HorizontalOptions="Center"
+                        VerticalOptions="Center"></Switch>
+                <Label  HorizontalOptions="Center"  Text="Left"></Label>
+            </StackLayout>
+
+
+            <Button   Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Text="Calculate" Command="{Binding Calculate}"></Button>
+
+
+            <Label Grid.Row="6"  Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                   VerticalOptions="Center" Text="{Binding MoaWindage}" FontSize="Title" />
+
+            <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                   VerticalOptions="Center" Text="{Binding MoaElevation}" FontSize="Title" />
+
+
+            <Label Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center"
+                   VerticalOptions="Center" Text="{Binding Errors}" FontSize="Title" />
+
+
+        </Grid><!--<Label Text="Size of Target in inches:"   FontSize="Title" />
         <Entry Text="{Binding TargetSizeInches}" WidthRequest="10"></Entry>
         <Label Text="Size of Target in mildots:" FontSize="Title" />
         <Entry Text="{Binding TargetSizeMilDots}"></Entry>
