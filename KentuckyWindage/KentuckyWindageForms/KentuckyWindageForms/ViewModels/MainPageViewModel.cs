@@ -55,8 +55,11 @@ namespace KentuckyWindageForms.ViewModels
             {
                 _input.WindDirection = value ? WindDirection.Left : WindDirection.Right;
                 OnPropertyChanged(nameof(IsLeft));
+                OnPropertyChanged(nameof(DirectionText));
             }
         }
+        public string DirectionText => _input.WindDirection.ToString();
+
         public decimal TargetSizeInches
         {
             get => _input.TargetSizeInches;
@@ -95,8 +98,8 @@ namespace KentuckyWindageForms.ViewModels
         }
 
         // Results
-        public string MoaElevation => $"Elevation should be {_adjustments.MoaElevation}";
+        public string MoaElevation => _adjustments.MoaElevation > 0 ? $"Elevation should be {_adjustments.MoaElevation}" : "";
 
-        public string MoaWindage => $"Windage should be {_adjustments.MoaWindage}";
+        public string MoaWindage => _adjustments.MoaElevation > 0 ? $"Windage should be {_adjustments.MoaWindage}" : "";
     }
 }
