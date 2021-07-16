@@ -48,13 +48,13 @@ namespace KentuckyWindageForms.ViewModels
 
 
         public string Errors { get; set; }
-        public bool IsLeft
+        public bool IsRight
         {
             get => _input.WindDirection == WindDirection.Left;
             set
             {
-                _input.WindDirection = value ? WindDirection.Left : WindDirection.Right;
-                OnPropertyChanged(nameof(IsLeft));
+                _input.WindDirection = value ? WindDirection.Right : WindDirection.Left;
+                OnPropertyChanged(nameof(IsRight));
                 OnPropertyChanged(nameof(DirectionText));
             }
         }
