@@ -25,16 +25,9 @@ namespace KentuckyWindageForms.ViewModels
         
         private bool IsFormValid()
         {
-            var isValid = _input.Validate(out var results);
-            if (!isValid)
-            {
-                var issues = results.Select(r => string.Join(", ", r.MemberNames) + ": " + r.ErrorMessage);
-                Errors = string.Join(Environment.NewLine, issues);
-            }
-            else
-            {
-                Errors = null;
-            }
+            var isValid = _input.IsValid();
+
+            Errors = isValid ? "" : "Inputs should all be non-zero";
             OnPropertyChanged(nameof(Errors));
 
             return isValid;

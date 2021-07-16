@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using KentuckyWindageForms.Attributes;
 
 namespace KentuckyWindageForms.Models
 {
     public class InputModel
     {
-        [Range(0.0d, double.PositiveInfinity, ErrorMessage = "The field {0} must be greater than {1}.")] 
+        [Positive] 
         public decimal TargetSizeInches { get; set; }
-        [Range(0.0d, double.PositiveInfinity, ErrorMessage = "The field {0} must be greater than {1}.")]
+        [Positive]
         public decimal TargetSizeMilDots { get; set; }
-        [Range(0.0d, double.PositiveInfinity, ErrorMessage = "The field {0} must be greater than {1}.")]
+        [Positive]
         public decimal WindageInches { get; set; }
-        [Range(0.0d, double.PositiveInfinity, ErrorMessage = "The field {0} must be greater than {1}.")]
+        [Positive]
         public decimal ElevationInches { get; set; }
         public WindDirection WindDirection { get; set; }
 
