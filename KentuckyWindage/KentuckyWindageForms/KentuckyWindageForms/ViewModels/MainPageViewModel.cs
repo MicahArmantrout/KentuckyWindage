@@ -74,7 +74,7 @@ namespace KentuckyWindageForms.ViewModels
             get => _input.TargetSizeMilDots;
             set
             {
-                _input.ElevationInches = value;
+                _input.TargetSizeMilDots = value;
                 OnPropertyChanged(nameof(TargetSizeMilDots));
             }
         }
