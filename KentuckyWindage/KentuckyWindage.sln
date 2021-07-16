@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KentuckyWindage", "KentuckyWindage\KentuckyWindage.csproj", "{0CB45917-16E6-44C0-8EA9-60EFD6FF1043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KentuckyWindageForms.Android", "KentuckyWindageForms\KentuckyWindageForms.Android\KentuckyWindageForms.Android.csproj", "{D529E912-6C45-47EF-B7B8-3A1174766026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KentuckyWindageForms", "KentuckyWindageForms\KentuckyWindageForms\KentuckyWindageForms.csproj", "{727A87E6-CD53-40C7-9488-9769361A5B5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,16 @@ Global
 		{0CB45917-16E6-44C0-8EA9-60EFD6FF1043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB45917-16E6-44C0-8EA9-60EFD6FF1043}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0CB45917-16E6-44C0-8EA9-60EFD6FF1043}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D529E912-6C45-47EF-B7B8-3A1174766026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D529E912-6C45-47EF-B7B8-3A1174766026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D529E912-6C45-47EF-B7B8-3A1174766026}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D529E912-6C45-47EF-B7B8-3A1174766026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D529E912-6C45-47EF-B7B8-3A1174766026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D529E912-6C45-47EF-B7B8-3A1174766026}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{727A87E6-CD53-40C7-9488-9769361A5B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727A87E6-CD53-40C7-9488-9769361A5B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727A87E6-CD53-40C7-9488-9769361A5B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727A87E6-CD53-40C7-9488-9769361A5B5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
